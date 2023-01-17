@@ -1,0 +1,21 @@
+{
+    "canisters": {
+        "quicklist": {
+            "main": "src/main.mo",
+            "type": "motoko"
+        }
+      },
+      "dfx": "0.12.1",
+      "defaults": {
+        "build": {
+          "args": "",
+          "packtool": "vessel sources"
+        }
+      },
+      "networks": {
+        "local": {
+            "bind": "127.0.0.1:8000",
+            "type": "ephemeral"
+        }
+    }
+}
