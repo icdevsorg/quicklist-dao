@@ -132,7 +132,7 @@ shared (deployer) actor class QuickList() = this {
         main_text.add("\"Builders Too Busy to Pay Attention to Your Allow-List But Will Support You When its Time\" DAO\n\nThis canister provides Internet Computer Community Builders a place to capture the principal address of key Ecosystem builders that may be too busy to pay attention to your new/cool airdrop and/or whitelist.  \n\nDevelopers love freebies and would love to help you out with your project, but may not spend much time on twitter, discord, etc. You can find a list of these principals at /list on this site.");
         main_text.add("\n\nVisit https://icdevs.org/BuilderDAO.html");
         main_text.add("\n\nFund the continued development of the DAO: https://icdevs.org/donations.html");
-        main_text.add("\n\nThis list is available programaticaly via the candid signature: \nquery getList: () -> [(Principal, (Text,Int))];\nquery onList: (Principal) -> async ?Int;  //timestamp of date added");
+        main_text.add("\n\nThis list is available programmatically via the candid signature: \nquery getList: () -> [(Principal, (Text,Int))];\nquery onList: (Principal) -> async ?Int;  //timestamp of date added");
         main_text.add("\n\nPrincipal - Default Account - Member Since - Description\n\n");
         for(thisItem in Map.entries(state_current.data)){
           main_text.add(Principal.toText(thisItem.0) # "     " # AccountIdentifier.toText(AccountIdentifier.fromPrincipal(thisItem.0,null)) # "     " # Int.toText(thisItem.1.1) # "     " # thisItem.1.0 # "\n\n");
