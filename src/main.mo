@@ -92,7 +92,7 @@ shared (deployer) actor class QuickList() = this {
     switch(mint_action){
       case(#err(_)){
       Map.set(state_current.data, phash, request, (current_val.0, current_val.1));
-      return #err("could not mint");
+      return #err("could not burn");
     };
     case(#ok(#SupplyChanged(val))){
 
@@ -130,7 +130,7 @@ shared (deployer) actor class QuickList() = this {
       if(path_size == 0) {
         let main_text = Buffer.Buffer<Text>(1);
         main_text.add("\"Builders Too Busy to Pay Attention to Your Allow-List But Will Support You When its Time\" DAO\n\nThis canister provides Internet Computer Community Builders a place to capture the principal address of key Ecosystem builders that may be too busy to pay attention to your new/cool airdrop and/or whitelist.  \n\nDevelopers love freebies and would love to help you out with your project, but may not spend much time on twitter, discord, etc. You can find a list of these principals at /list on this site.");
-        main_text.add("\n\nVisit https://icdevs.org/BuilderDAO.html");
+        main_text.add("\n\nVisit https://icdevs.org/BuilderDAO.html or the dev forum at https://forum.dfinity.org/t/builders-and-developers-dao-axon-experiment-create-a-list-of-contributors-for-airdrops-beta-lists/18072.");
         main_text.add("\n\nFund the continued development of the DAO: https://icdevs.org/donations.html");
         main_text.add("\n\nThis list is available programmatically via the candid signature: \nquery getList: () -> [(Principal, (Text,Int))];\nquery onList: (Principal) -> async ?Int;  //timestamp of date added");
         main_text.add("\n\nPrincipal - Default Account - Member Since - Description\n\n");
